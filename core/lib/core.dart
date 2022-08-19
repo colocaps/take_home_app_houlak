@@ -1,5 +1,10 @@
 library core;
 
+export 'package:core/src/integrations/dio_manager_impl.dart'
+    show DioManagerImpl;
+
+export 'package:core/src/abstractions/dio_manager.dart' show DioManager;
+
 export 'package:core/src/integrations/get_it_injector_container.dart'
     show GetItInjector;
 
