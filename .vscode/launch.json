@@ -1,0 +1,19 @@
+{
+
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "take_home_app_houlak",
+            "request": "launch",
+            "program": "lib/main.dart",
+            "type": "dart",
+          
+            },
+            {
+                "name": "core",
+                "cwd": "core",
+                "request": "launch",
+                "type": "dart"
+            },
+    ]
+}

@@ -2,6 +2,7 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:houlak_take_home_app/features/home_module/home_module.dart';
 
 class Application extends StatefulWidget {
   const Application({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class _ApplicationState extends State<Application> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: HomeModule.homeRoute,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -26,6 +28,13 @@ class _ApplicationState extends State<Application> {
         Locale('en', ''),
       ],
       theme: ApplicationTheme.light,
+      routes: _generateRoutes(),
     );
+  }
+
+  Map<String, WidgetBuilder> _generateRoutes() {
+    return {
+      ...HomeModule.generateRoutes(),
+    };
   }
 }
