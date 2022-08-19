@@ -5,6 +5,11 @@ import 'package:houlak_take_home_app/features/home_module/pages/home_page.dart';
 abstract class HomeModule {
   static late final NavigationManager _navigationManager;
 
+  static registerDependencies() {
+    _navigationManager =
+        InjectorContainer.instance.resolve<NavigationManager>();
+  }
+
   static const String homeRoute = '/home';
 
   static Map<String, WidgetBuilder> generateRoutes() {
