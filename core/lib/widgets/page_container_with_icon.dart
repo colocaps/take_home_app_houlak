@@ -16,6 +16,7 @@ class PageContainerWithIcon extends StatelessWidget {
   final Widget landingLeft;
   final Widget body;
   final Color bgColor;
+  final Color? appBarColor;
   final Color titleColor;
   final List<BreadcrumbItem>? breadcrumbItems;
   final bool withFooter;
@@ -46,6 +47,7 @@ class PageContainerWithIcon extends StatelessWidget {
     this.titleWidget,
     this.centerTitle = true,
     this.appBarHeight,
+    this.appBarColor,
   }) : super(key: key);
 
   @override
@@ -63,7 +65,7 @@ class PageContainerWithIcon extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: appBarHeight,
           elevation: 0,
-          backgroundColor: Colors.transparent,
+          backgroundColor: appBarColor,
           title: Tooltip(
             message: title,
             height: 40,

@@ -1,5 +1,8 @@
 library home_search;
 
+export 'package:home_search/src/presentation/widgets/home_search_field.dart'
+    show HomeSearchField;
+
 export 'package:home_search/src/presentation/cubit/home_search_cubit.dart'
     show HomeSearchCubit;
 

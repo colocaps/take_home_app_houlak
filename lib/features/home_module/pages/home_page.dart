@@ -11,16 +11,19 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child: SafeArea(
-          child: Center(
-            child: HomeSearchComponent(
-              homeSearchCubit: homeSearchCubit,
-            ),
-          ),
+      body: PageContainerWithIcon(
+        bgColor: Colors.white,
+        appBarColor: Colors.blueAccent,
+        withoutContentPadding: true,
+        showIconContainer: false,
+        centerTitle: true,
+        showBoxContainer: false,
+        body: HomeSearchComponent(homeSearchCubit: homeSearchCubit),
+        iconSrc: '',
+        landingLeft: const Icon(Icons.search),
+        titleWidget: const SizedBox(
+          width: double.infinity,
+          child: HomeSearchField(),
         ),
       ),
     );

@@ -18,7 +18,7 @@ class HomeSearchComponent extends StatelessWidget {
         ..getNowPlayingMovies(
           input: HomeSearchInput(
             query: 'duki',
-            type: ['track'],
+            type: ['track%2Cartist'],
             token:
                 'BQB1iGZnamkmRGajk8iG9QKJjEeYqSNU2GXmB1m0dHyx9UgsaBOFfb_sgngUP3XJ4cnnoK3sFskcgfPQYuXdvEUfDLWLz01kDdA0_LErQbLOWepE_Q-LyPkaXVkv2KolfKaeTGQZcxfaa9D5X2vVPQjDtxQgbFuvXkRenNsZzYdMpTDDtQf_2ep2AnM2PiauzGU',
           ),
