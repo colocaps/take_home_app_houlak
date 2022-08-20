@@ -1,7 +1,6 @@
 import 'package:core/core.dart';
 import 'package:home_search/src/domain/entities/artist_entity.dart';
 import 'package:home_search/src/domain/entities/item_entity.dart';
-import 'package:home_search/src/domain/entities/results_entity.dart';
 import 'package:home_search/src/domain/interactor/input_output/home_search_input.dart';
 import 'package:home_search/src/domain/interactor/input_output/home_search_output.dart';
 import 'package:home_search/src/domain/repositories/home_search_remote_repository.dart';
@@ -31,7 +30,7 @@ class HomeSearchRemoteRepositoryImpl implements HomeSearchRemoteRepository {
 
     if (response != null) {
       if (response.isOk()) {
-        final search = _mapToArtistEntity(response.data);
+        final search = _mapToArtistEntity(response.data['artists']);
         return HomeSearchOutput.withData(artistEntity: search);
       } else {
         _errors.add(
@@ -51,21 +50,17 @@ class HomeSearchRemoteRepositoryImpl implements HomeSearchRemoteRepository {
     }
   }
 
-  static List<ImagesEntity> _mapToImages(List<dynamic> list) {
-    return list
-        .map(
-          (json) => ImagesEntity(
-            heigth: json['heigth'],
-            width: json['width'],
-            url: json['url'],
-          ),
-        )
-        .toList();
-  }
-
   static ArtistEntity _mapToArtistEntity(Map<String, dynamic> value) {
+    // var item =  as List<dynamic>;
+    // var itemList = _mapToItemEntity(item);
     return ArtistEntity(
-      resultsEntity: _mapToResultsEntity(value),
+      href: value['href'] ?? '',
+      limit: value['limit'] ?? 0,
+      next: value['next'] ?? '',
+      offset: value['offset'] ?? 0,
+      previous: value['previous'] ?? '',
+      total: value['total'] ?? 0,
+      //itemEntityList: value['items'],
     );
   }
 
@@ -80,18 +75,15 @@ class HomeSearchRemoteRepositoryImpl implements HomeSearchRemoteRepository {
         .toList();
   }
 
-  static ResultsEntity _mapToResultsEntity(Map<String, dynamic> value) {
-    var item = value['items'] as List<dynamic>;
-    var itemList = _mapToItemEntity(item);
-
-    return ResultsEntity(
-      href: value['href'] ?? '',
-      limit: value['limit'] ?? 0,
-      next: value['next'] ?? '',
-      offset: value['offset'] ?? 0,
-      previous: value['previous'] ?? '',
-      total: value['total'] ?? 0,
-      itemEntityList: itemList,
-    );
+  static List<ImagesEntity> _mapToImages(List<dynamic> list) {
+    return list
+        .map(
+          (json) => ImagesEntity(
+            heigth: json['heigth'],
+            width: json['width'],
+            url: json['url'],
+          ),
+        )
+        .toList();
   }
 }

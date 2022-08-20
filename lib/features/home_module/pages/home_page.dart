@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                     query: sendSearchWords(input),
                     type: ['artist'],
                     token:
-                        'BQDU-Hy_hwsiHXkYjGsHCVNtydQ5gzQczu2aMGaH7cDbkdc-v_Nj3Ee3Z1vQftkMB8N2xtmiig1RpneNNBe-o8aubAyChD6ta9E_Nv8LNnE1ydWti9kbXVbjek-aH2Azz3RCHfYkf2KXAJLRXzYgZhK7Xose0q7NOpGjFiZ-tbXoTXaK7-bYXgNNaXf7TAjhURg',
+                        'BQDT3CaU2EFm2GwvPcSAvpI--HX6n0WWi9xFV60Kv1TqhLVgDOte731tA6LHfb2y4FiXbFojuMiagDEDKAr-SGKpOwW_cXE1V0OTHSoQryPBlEaIt6KoDzHh3MyVpXuqYwUonlgELkjOehbBrGSQ74MfbAiq8EQn-UQw6PGul5rbiTpYtMgin8UUKKTV-2jta_s',
                   ),
                 );
               },

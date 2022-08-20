@@ -25,7 +25,7 @@ class HomeSearchField extends StatelessWidget {
         ),
         contentPadding: const EdgeInsets.symmetric(vertical: 10),
         filled: true,
-        hintText: 'Busca artistas o canciones',
+        hintText: 'Busca artistas',
         hintStyle: TextStyle(
           color: Colors.grey[800],
           fontSize: 10,

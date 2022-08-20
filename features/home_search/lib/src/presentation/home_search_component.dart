@@ -39,9 +39,18 @@ class HomeSearchComponent extends StatelessWidget {
       );
     }
     if (state is Loaded) {
-      return Container(
-        child: Text(
-          state.artistEntity.resultsEntity.total.toString(),
+      return Center(
+        child: Container(
+          child: Column(
+            children: [
+              Text(
+                state.artistEntity.total.toString(),
+                style: TextStyle(color: Colors.white),
+              ),
+              Text('' // state.artistEntity.itemEntityList[0].name,
+                  ),
+            ],
+          ),
         ),
       );
     } else if (state is Error) {
