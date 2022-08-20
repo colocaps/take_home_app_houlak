@@ -1,3 +1,4 @@
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_search/src/presentation/cubit/home_search_cubit.dart';
@@ -13,8 +14,8 @@ class HomeSearchComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider.value(
-      value: _homeSearchCubit,
+    return BlocProvider(
+      create: (context) => _homeSearchCubit,
       child: BlocConsumer<HomeSearchCubit, HomeSearchState>(
         listener: (context, state) {},
         builder: _buildByState,
@@ -26,6 +27,17 @@ class HomeSearchComponent extends StatelessWidget {
     BuildContext context,
     HomeSearchState state,
   ) {
+    if (state is Initial) {
+      return const Expanded(
+        child: CustomEmptyState(
+          backgroundColor: Colors.amber,
+          subtitle: 'Bienvenido a',
+          title: 'El buscador de artistas de Spotify',
+          withIcon: false,
+          image: '',
+        ),
+      );
+    }
     if (state is Loaded) {
       return Container(
         child: Text(

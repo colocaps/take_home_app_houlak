@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class CustomEmptyState extends StatelessWidget {
   final IconData? icon;
-  final String titleError;
-  final String subtitleError;
+  final String title;
+  final String subtitle;
   final Color backgroundColor;
   final bool withIcon;
   final String? image;
@@ -12,8 +12,8 @@ class CustomEmptyState extends StatelessWidget {
   const CustomEmptyState({
     Key? key,
     this.icon,
-    required this.titleError,
-    required this.subtitleError,
+    required this.title,
+    required this.subtitle,
     required this.backgroundColor,
     required this.withIcon,
     this.image,
@@ -45,21 +45,23 @@ class CustomEmptyState extends StatelessWidget {
               height: 10,
             ),
             AutoSizeText(
-              titleError,
+              title,
               textAlign: TextAlign.center,
               maxLines: 1,
               maxFontSize: 22,
               minFontSize: 18,
+              style: Theme.of(context).textTheme.bodySmall,
             ),
             const SizedBox(
               height: 10,
             ),
             AutoSizeText(
-              subtitleError,
+              subtitle,
               textAlign: TextAlign.center,
               maxLines: 2,
               maxFontSize: 16,
               minFontSize: 10,
+              style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
         ),

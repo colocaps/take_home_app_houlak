@@ -13,7 +13,9 @@ class HomeSearchCubit extends Cubit<HomeSearchState> {
   })  : _homeSearchUsecase = homeSearchUsecase,
         super(Initial());
 
-  Future<void> getSearchResult({required HomeSearchInput input}) async {
+  Future<void> getSearchResult({
+    required HomeSearchInput input,
+  }) async {
     emit(Loading());
 
     var result = await _homeSearchUsecase.execute(input);
