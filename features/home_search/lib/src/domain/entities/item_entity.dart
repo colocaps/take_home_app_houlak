@@ -1,19 +1,18 @@
-import 'package:home_search/src/domain/entities/track_entity.dart';
-
 class ItemEntity {
   final FollowersEntity? followersEntity;
   final List<ImagesEntity> imagesEntity;
+  final String id;
   final String name;
   final int? popularity;
   final String? type;
-  final AlbumEntity albumEntity;
+
   ItemEntity({
     this.followersEntity,
     required this.imagesEntity,
     required this.name,
     this.popularity,
     this.type,
-    required this.albumEntity,
+    required this.id,
   });
 }
 

@@ -12,11 +12,11 @@ class Loading extends HomeSearchState {}
 class Empty extends HomeSearchState {}
 
 class Loaded extends HomeSearchState {
-  final ResponseEntity responseEntity;
+  final ArtistEntity artistEntity;
 
-  Loaded(this.responseEntity);
+  Loaded(this.artistEntity);
   @override
-  List<Object> get props => [responseEntity];
+  List<Object> get props => [artistEntity];
 }
 
 class Error extends HomeSearchState {

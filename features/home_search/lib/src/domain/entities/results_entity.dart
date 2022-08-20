@@ -1,5 +1,8 @@
+import 'package:home_search/src/domain/entities/item_entity.dart';
+
 class ResultsEntity {
   final String href;
+  final List<ItemEntity> itemEntityList;
   final int limit;
   final String next;
   final int offset;
@@ -13,5 +16,6 @@ class ResultsEntity {
     required this.offset,
     required this.previous,
     required this.total,
+    required this.itemEntityList,
   });
 }

@@ -1,16 +1,16 @@
-import 'package:home_search/src/domain/entities/response_entity.dart';
+import 'package:home_search/src/domain/entities/artist_entity.dart';
 
 class HomeSearchOutput {
-  final ResponseEntity? responseEntity;
+  final ArtistEntity? artistEntity;
   late List<String>? errors = [];
 
   HomeSearchOutput.withData({
-    required this.responseEntity,
+    required this.artistEntity,
   });
 
   HomeSearchOutput.withErrors({
     required this.errors,
-    this.responseEntity,
+    this.artistEntity,
   });
 
   bool get hasErrors => errors?.isNotEmpty ?? false;

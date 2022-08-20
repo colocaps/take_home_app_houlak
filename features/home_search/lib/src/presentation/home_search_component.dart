@@ -41,7 +41,7 @@ class HomeSearchComponent extends StatelessWidget {
     if (state is Loaded) {
       return Container(
         child: Text(
-          state.responseEntity.trackEntity!.resultsEntity.total.toString(),
+          state.artistEntity.resultsEntity.total.toString(),
         ),
       );
     } else if (state is Error) {
