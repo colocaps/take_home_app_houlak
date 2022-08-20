@@ -27,7 +27,7 @@ class _ApplicationState extends State<Application> {
         Locale('es', ''),
         Locale('en', ''),
       ],
-      theme: ApplicationTheme.light,
+      theme: ApplicationTheme.dark,
       routes: _generateRoutes(),
     );
   }

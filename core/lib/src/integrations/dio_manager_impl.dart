@@ -5,10 +5,19 @@ class DioManagerImpl implements DioManager {
   @override
   Future<dynamic> get(
     String url,
+    String token,
   ) async {
     var dio = await _buildDio();
+
     try {
-      var response = await dio.get(url);
+      var response = await dio.get(
+        url,
+        options: Options(
+          headers: {
+            "authorization": "Bearer $token",
+          },
+        ),
+      );
       return _buildHttpResponse(response);
     } catch (e) {
       return error(e);
@@ -21,6 +30,7 @@ class DioManagerImpl implements DioManager {
     dynamic data,
   }) async {
     var dio = await _buildDio();
+
     try {
       var response = await dio.delete(
         path,

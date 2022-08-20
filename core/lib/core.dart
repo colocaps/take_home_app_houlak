@@ -1,5 +1,10 @@
 library core;
 
+export 'package:core/widgets/custom_empty_state.dart' show CustomEmptyState;
+
+export 'package:core/widgets/page_container_with_icon.dart'
+    show PageContainerWithIcon;
+
 export 'package:core/src/integrations/dio_manager_impl.dart'
     show DioManagerImpl;
 
