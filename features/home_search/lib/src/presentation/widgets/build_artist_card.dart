@@ -18,10 +18,14 @@ class BuildArtistCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
+      color: Theme.of(context).backgroundColor,
       padding: const EdgeInsets.all(
         8,
       ),
       child: Card(
+        clipBehavior: Clip.hardEdge,
+        shadowColor: Theme.of(context).highlightColor,
+        color: Theme.of(context).backgroundColor,
         elevation: 10,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),
@@ -56,7 +60,7 @@ class BuildArtistCard extends StatelessWidget {
                   children: [
                     Text(
                       'Nombre: $_artistName',
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.headline2,
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(
@@ -64,7 +68,15 @@ class BuildArtistCard extends StatelessWidget {
                     ),
                     Text(
                       'Popularidad: $_popularity',
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.headline2,
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    Text(
+                      'Toca para ver detalles',
+                      style: Theme.of(context).textTheme.caption,
                       textAlign: TextAlign.center,
                     ),
                   ],

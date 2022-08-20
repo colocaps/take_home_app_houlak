@@ -13,5 +13,9 @@ abstract class IoCManager {
       () => EnvironmentConfig.baseUrl,
       'baseUrl',
     );
+    injector.registerFactoryByName(
+      () => EnvironmentConfig.clientID,
+      'clientID',
+    );
   }
 }

@@ -30,9 +30,9 @@ class HomeSearchComponent extends StatelessWidget {
   ) {
     var size = MediaQuery.of(context).size;
     if (state is Initial) {
-      return const Center(
+      return Center(
         child: CustomEmptyState(
-          backgroundColor: Colors.white,
+          backgroundColor: Theme.of(context).backgroundColor,
           subtitle: 'El buscador de artistas de Spotify',
           title: 'Bienvenido a',
           withIcon: false,

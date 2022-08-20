@@ -89,6 +89,7 @@ abstract class ApplicationTheme {
     scaffoldBackgroundColor: Colors.white,
     canvasColor: Colors.transparent,
     appBarTheme: const AppBarTheme(centerTitle: true, color: Color(0xff003c69)),
+    backgroundColor: Colors.white,
   );
 
   static final ThemeData dark = ThemeData.dark().copyWith(
@@ -100,6 +101,7 @@ abstract class ApplicationTheme {
     disabledColor: const Color(0xff606166),
     highlightColor: const Color(0xffdce0fa),
     scaffoldBackgroundColor: const Color(0xff181818),
+    backgroundColor: Colors.black,
   );
 
   static TextTheme _darkTextTheme() {
