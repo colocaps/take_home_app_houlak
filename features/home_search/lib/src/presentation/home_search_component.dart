@@ -63,11 +63,9 @@ class HomeSearchComponent extends StatelessWidget {
       );
     } else if (state is Error) {
       return Center(
-        child: Container(
-          child: Text(
-            state.error.first.toString(),
-            style: TextStyle(color: Colors.white),
-          ),
+        child: Text(
+          state.error.first.toString(),
+          style: const TextStyle(color: Colors.white),
         ),
       );
     }
