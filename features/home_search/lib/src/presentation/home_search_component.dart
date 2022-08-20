@@ -14,8 +14,8 @@ class HomeSearchComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => _homeSearchCubit,
+    return BlocProvider.value(
+      value: _homeSearchCubit,
       child: BlocConsumer<HomeSearchCubit, HomeSearchState>(
         listener: (context, state) {},
         builder: _buildByState,
@@ -28,13 +28,13 @@ class HomeSearchComponent extends StatelessWidget {
     HomeSearchState state,
   ) {
     if (state is Initial) {
-      return const Expanded(
+      return const Center(
         child: CustomEmptyState(
-          backgroundColor: Colors.amber,
-          subtitle: 'Bienvenido a',
-          title: 'El buscador de artistas de Spotify',
+          backgroundColor: Colors.white,
+          subtitle: 'El buscador de artistas de Spotify',
+          title: 'Bienvenido a',
           withIcon: false,
-          image: '',
+          image: 'assets/images/spotify-music.gif',
         ),
       );
     }

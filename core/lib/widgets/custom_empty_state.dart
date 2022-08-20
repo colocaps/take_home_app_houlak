@@ -21,50 +21,58 @@ class CustomEmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: 250,
-        width: MediaQuery.of(context).size.width * 1,
-        margin: const EdgeInsets.all(
-          10,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 20,
-            ),
-            withIcon
-                ? Icon(
-                    icon,
-                    size: 50,
-                    color: Colors.black87,
-                  )
-                : Image.asset(image!),
-            const SizedBox(
-              height: 10,
-            ),
-            AutoSizeText(
-              title,
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              maxFontSize: 22,
-              minFontSize: 18,
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            AutoSizeText(
-              subtitle,
-              textAlign: TextAlign.center,
-              maxLines: 2,
-              maxFontSize: 16,
-              minFontSize: 10,
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-          ],
-        ),
+    var size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height * 0.4,
+      width: size.width * 1,
+      margin: const EdgeInsets.all(
+        10,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const SizedBox(
+            height: 20,
+          ),
+          AutoSizeText(
+            title,
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            maxFontSize: 22,
+            minFontSize: 18,
+            style: const TextStyle(color: Colors.white),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          AutoSizeText(
+            subtitle,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            maxFontSize: 16,
+            minFontSize: 10,
+            style: const TextStyle(color: Colors.white),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          withIcon
+              ? Icon(
+                  icon,
+                  size: 50,
+                  color: Colors.black87,
+                )
+              : Image.asset(
+                  fit: BoxFit.contain,
+                  width: size.width,
+                  height: size.width / 2.618,
+                  image!,
+                  package: 'core',
+                ),
+          const SizedBox(
+            height: 10,
+          ),
+        ],
       ),
     );
   }
