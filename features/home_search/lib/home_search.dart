@@ -1,5 +1,8 @@
 library home_search;
 
+export 'package:home_search/src/domain/interactor/input_output/home_search_input.dart'
+    show HomeSearchInput;
+
 export 'package:home_search/src/presentation/widgets/home_search_field.dart'
     show HomeSearchField;
 

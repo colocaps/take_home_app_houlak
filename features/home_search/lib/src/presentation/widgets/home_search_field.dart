@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
 class HomeSearchField extends StatelessWidget {
-  const HomeSearchField({Key? key}) : super(key: key);
+  final void Function(String)? _onFieldSubmitted;
+
+  const HomeSearchField({
+    Key? key,
+    required void Function(String)? onFieldSubmitted,
+  })  : _onFieldSubmitted = onFieldSubmitted,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +32,7 @@ class HomeSearchField extends StatelessWidget {
         ),
         fillColor: Colors.white70,
       ),
-      onChanged: (String input) {},
-      onFieldSubmitted: (String input) {},
+      onFieldSubmitted: _onFieldSubmitted,
     );
   }
 }
