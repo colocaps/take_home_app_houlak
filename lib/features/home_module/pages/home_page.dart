@@ -21,12 +21,14 @@ class HomePage extends StatelessWidget {
           showIconContainer: false,
           centerTitle: true,
           showBoxContainer: false,
+          appBarHeight: 80,
           body: HomeSearchComponent(
             homeSearchCubit: homeSearchCubit,
           ),
           iconSrc: '',
           landingLeft: const Icon(Icons.search),
           titleWidget: SizedBox(
+            height: 50,
             width: double.infinity,
             child: HomeSearchField(
               onFieldSubmitted: (String input) {
@@ -35,7 +37,7 @@ class HomePage extends StatelessWidget {
                     query: sendSearchWords(input),
                     type: ['artist'],
                     token:
-                        'BQDT3CaU2EFm2GwvPcSAvpI--HX6n0WWi9xFV60Kv1TqhLVgDOte731tA6LHfb2y4FiXbFojuMiagDEDKAr-SGKpOwW_cXE1V0OTHSoQryPBlEaIt6KoDzHh3MyVpXuqYwUonlgELkjOehbBrGSQ74MfbAiq8EQn-UQw6PGul5rbiTpYtMgin8UUKKTV-2jta_s',
+                        'BQAdlyI_L7fjhQoPpgKToD1WSkGZV3cTnivXhuqAnhU5GnRlS6oMGIg-SWTuVJl82RScscFa4G60irGozYjXVxzFvrwccaLMCyCM30cEykjQWs1o8w8I2Y0fFKeHFVuaOxCOXI_RttPGZqHqvCO8YX_P-JML5EK8MgE1olILEsTW15bqAsgxP0jfiuaDn3BBVcM',
                   ),
                 );
               },

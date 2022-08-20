@@ -14,7 +14,7 @@ class HomeSearchField extends StatelessWidget {
     TextEditingController textEditingController = TextEditingController();
     return TextFormField(
       controller: textEditingController,
-      style: Theme.of(context).textTheme.bodyMedium,
+      style: Theme.of(context).textTheme.bodyLarge,
       textAlign: TextAlign.center,
       decoration: InputDecoration(
         isDense: true,
@@ -23,12 +23,12 @@ class HomeSearchField extends StatelessWidget {
           color: Colors.transparent,
           fontSize: 0,
         ),
-        contentPadding: const EdgeInsets.symmetric(vertical: 10),
+        contentPadding: const EdgeInsets.symmetric(vertical: 20),
         filled: true,
         hintText: 'Busca artistas',
         hintStyle: TextStyle(
           color: Colors.grey[800],
-          fontSize: 10,
+          fontSize: 15,
         ),
         fillColor: Colors.white70,
       ),

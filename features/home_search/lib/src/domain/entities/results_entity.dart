@@ -1,6 +1,6 @@
 import 'package:home_search/src/domain/entities/item_entity.dart';
 
-class ArtistEntity {
+class ResultsEntity {
   final String href;
   final List<ItemEntity> itemEntityList;
   final int limit;
@@ -9,7 +9,7 @@ class ArtistEntity {
   final String previous;
   final int total;
 
-  ArtistEntity({
+  ResultsEntity({
     required this.href,
     required this.limit,
     required this.next,

@@ -44,7 +44,7 @@ class HomeSearchComponent extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                state.artistEntity.total.toString(),
+                state.responseEntity.artistEntity.total.toString(),
                 style: TextStyle(color: Colors.white),
               ),
               Text('' // state.artistEntity.itemEntityList[0].name,

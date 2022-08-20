@@ -19,7 +19,7 @@ class HomeSearchUsecaseImpl implements HomeSearchUsecase {
       );
     } else {
       return HomeSearchOutput.withData(
-        artistEntity: resp.artistEntity,
+        responseEntity: resp.responseEntity,
       );
     }
   }
