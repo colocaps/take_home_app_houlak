@@ -62,6 +62,9 @@ class HomeSearchRemoteRepositoryImpl implements HomeSearchRemoteRepository {
   static ArtistEntity _mapToArtistEntity(Map<String, dynamic> value) {
     var item = value['items'] as List<dynamic>;
     var itemList = _mapToItemEntity(item);
+    itemList.sort(
+      ((a, b) => b.popularity!.compareTo(a.popularity!)),
+    );
     return ArtistEntity(
       href: value['href'] ?? '',
       limit: value['limit'] ?? 0,
@@ -77,9 +80,12 @@ class HomeSearchRemoteRepositoryImpl implements HomeSearchRemoteRepository {
     return list
         .map(
           (json) => ItemEntity(
-              id: json['id'],
-              imagesEntity: _mapToImages(json['images']),
-              name: json['name']),
+            id: json['id'],
+            imagesEntity: _mapToImages(json['images']),
+            name: json['name'],
+            popularity: json['popularity'],
+            type: json['type'],
+          ),
         )
         .toList();
   }
@@ -90,7 +96,8 @@ class HomeSearchRemoteRepositoryImpl implements HomeSearchRemoteRepository {
           (json) => ImagesEntity(
             heigth: json['height'] ?? 0,
             width: json['width'] ?? 0,
-            url: json['url'] ?? '',
+            url: json['url'] ??
+                'https://st.depositphotos.com/1987177/3470/v/450/depositphotos_34700099-stock-illustration-no-photo-available-or-missing.jpg',
           ),
         )
         .toList();
