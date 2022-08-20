@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:home_search/src/domain/entities/artist_entity.dart';
 import 'package:home_search/src/domain/entities/response_entity.dart';
 import 'package:home_search/src/domain/interactor/input_output/home_search_input.dart';
 import 'package:home_search/src/domain/interactor/usecase/home_search_usecase.dart';
