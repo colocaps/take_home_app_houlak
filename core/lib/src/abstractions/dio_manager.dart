@@ -1,6 +1,7 @@
 abstract class DioManager {
   Future<dynamic> get(
     String url,
+    String token,
   );
 
   Future<dynamic> delete(
