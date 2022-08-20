@@ -1,12 +1,8 @@
 import 'package:core/core.dart';
-import 'package:home_search/src/domain/entities/album_entity.dart';
 import 'package:home_search/src/domain/entities/artist_entity.dart';
-import 'package:home_search/src/domain/entities/episode_entity.dart';
 import 'package:home_search/src/domain/entities/item_entity.dart';
-import 'package:home_search/src/domain/entities/playlist_entity.dart';
 import 'package:home_search/src/domain/entities/response_entity.dart';
 import 'package:home_search/src/domain/entities/results_entity.dart';
-import 'package:home_search/src/domain/entities/show_entity.dart';
 import 'package:home_search/src/domain/entities/track_entity.dart';
 import 'package:home_search/src/domain/interactor/input_output/home_search_input.dart';
 import 'package:home_search/src/domain/interactor/input_output/home_search_output.dart';
@@ -59,43 +55,62 @@ class HomeSearchRemoteRepositoryImpl implements HomeSearchRemoteRepository {
 
   static ResponseEntity _mapToResponseEntity(Map<String, dynamic> value) {
     return ResponseEntity(
-      trackEntity: _mapToTacksEntity(value["tracks"]),
-      artistEntity: _mapToArtistEntity(value["artists"]),
-      albumEntity: _mapToAlbumsEntity(value["albums"]),
-      playlistEntity: _mapToPlaulistEntity(value["playlists"]),
-      showEntity: _mapToShowEntity(value["shows"]),
-      episodeEntity: _mapToEpisodeEntity(value["episodes"]),
+      trackEntity: _mapToTacksEntity(value["tracks"] ?? {}),
+      artistEntity: _mapToArtistEntity(value["artists"] ?? {}),
     );
   }
 
   static TrackEntity _mapToTacksEntity(Map<String, dynamic> value) {
+    var items = value["items"] as List<dynamic>;
+    var itemList = _mapToTacksItem(items);
     return TrackEntity(
       resultsEntity: _mapToResultsEntity(value),
+      itemList: itemList,
     );
   }
 
-  static EpisodeEntity _mapToEpisodeEntity(Map<String, dynamic> value) {
-    return EpisodeEntity(
-      resultsEntity: _mapToResultsEntity(value),
-    );
+  static List<TrackItem> _mapToTacksItem(List<dynamic> list) {
+    return list
+        .map(
+          (json) => TrackItem(
+              albumEntity: _mapToAlbumEntity(json['album']),
+              artistList: _mapToArtist(json['artists']),
+              name: json['name']),
+        )
+        .toList();
   }
 
-  static ShowEntity _mapToShowEntity(Map<String, dynamic> value) {
-    return ShowEntity(
-      resultsEntity: _mapToResultsEntity(value),
-    );
-  }
-
-  static PlaylistEntity _mapToPlaulistEntity(Map<String, dynamic> value) {
-    return PlaylistEntity(
-      resultsEntity: _mapToResultsEntity(value),
-    );
-  }
-
-  static AlbumEntity _mapToAlbumsEntity(Map<String, dynamic> value) {
+  static AlbumEntity _mapToAlbumEntity(Map<String, dynamic> value) {
+    var artist = value["artists"] as List<dynamic>;
+    var artistList = _mapToArtist(artist);
     return AlbumEntity(
-      resultsEntity: _mapToResultsEntity(value),
+      albumType: value['album_type'],
+      artist: artistList,
     );
+  }
+
+  static List<ImagesEntity> _mapToImages(List<dynamic> list) {
+    return list
+        .map(
+          (json) => ImagesEntity(
+            heigth: json['heigth'],
+            width: json['width'],
+            url: json['url'],
+          ),
+        )
+        .toList();
+  }
+
+  static List<Artist> _mapToArtist(List<dynamic> list) {
+    return list
+        .map(
+          (json) => Artist(
+            id: json['id'],
+            name: json['name'],
+            type: json['type'],
+          ),
+        )
+        .toList();
   }
 
   static ArtistEntity _mapToArtistEntity(Map<String, dynamic> value) {

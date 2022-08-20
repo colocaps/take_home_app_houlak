@@ -17,10 +17,10 @@ class HomeSearchComponent extends StatelessWidget {
       value: _homeSearchCubit
         ..getNowPlayingMovies(
           input: HomeSearchInput(
-            query: 'remaster%20track:Doxy+artist:Miles%20Davis',
+            query: 'duki',
             type: ['track'],
             token:
-                'BQA2urmdhIBW9ymfID6GC4dEPY9rSTWOwMKWwS_EJv0qJZ2PV4Gv4G67sUDjavyjgstXOYfebmKcgzEAazxux6hDNSKcVwbVHFO3ofc9ScUCVn-dLN3bWU9StDU22vZzJC4KuFm_lFwzW-UZyjJPEGKKnR6bES0G0gK7B7n3T3rnbhljFnMTnMqXtV74DE9KEyc',
+                'BQB1iGZnamkmRGajk8iG9QKJjEeYqSNU2GXmB1m0dHyx9UgsaBOFfb_sgngUP3XJ4cnnoK3sFskcgfPQYuXdvEUfDLWLz01kDdA0_LErQbLOWepE_Q-LyPkaXVkv2KolfKaeTGQZcxfaa9D5X2vVPQjDtxQgbFuvXkRenNsZzYdMpTDDtQf_2ep2AnM2PiauzGU',
           ),
         ),
       child: BlocConsumer<HomeSearchCubit, HomeSearchState>(
@@ -37,7 +37,7 @@ class HomeSearchComponent extends StatelessWidget {
     if (state is Loaded) {
       return Container(
         child: Text(
-          state.responseEntity.trackEntity.resultsEntity.total.toString(),
+          state.responseEntity.trackEntity!.resultsEntity.total.toString(),
         ),
       );
     } else if (state is Error) {
