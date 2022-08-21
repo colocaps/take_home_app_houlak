@@ -17,6 +17,10 @@ abstract class IoCManager {
       ),
     );
 
+    injector.registerLazySingleton<CustomTopSnackBarManager>(
+      () => CustomTopSnackBarManagerImpl(),
+    );
+
     injector.registerFactoryByName(
       () => EnvironmentConfig.baseUrl,
       'baseUrl',

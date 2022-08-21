@@ -8,16 +8,19 @@ import 'package:sign_in/src/presentation/widgets/sign_in_build_initial.dart';
 class SignInComponent extends StatelessWidget {
   final SignInCubit _signInCubit;
   final WebAuth _webAuth;
+  final CustomTopSnackBarManager _customTopSnackBarManager;
   final Function(BuildContext, String) _onSignInCorrect;
 
   const SignInComponent({
     Key? key,
     required SignInCubit signInCubit,
     required WebAuth webAuth,
+    required CustomTopSnackBarManager customTopSnackBarManager,
     required Function(BuildContext, String) onSignInCorrect,
   })  : _signInCubit = signInCubit,
         _webAuth = webAuth,
         _onSignInCorrect = onSignInCorrect,
+        _customTopSnackBarManager = customTopSnackBarManager,
         super(key: key);
 
   @override
@@ -27,11 +30,11 @@ class SignInComponent extends StatelessWidget {
       child: BlocConsumer<SignInCubit, SignInState>(
         listener: (context, state) async {
           if (state is Error) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Cancelado por el usuario'),
-              ),
+            _customTopSnackBarManager.showErrorTopSnackbar(
+              context: context,
+              message: 'Cancelado por el usuario',
             );
+
             await _signInCubit.initState();
           } else if (state is Loaded) {
             _onSignInCorrect(

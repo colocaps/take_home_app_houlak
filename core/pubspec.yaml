@@ -16,6 +16,7 @@ dependencies:
   dio: ^4.0.4
   auto_size_text: ^3.0.0
   flutter_web_auth: ^0.4.1
+  top_snackbar_flutter: ^1.0.3
 dev_dependencies:
   flutter_test:
     sdk: flutter

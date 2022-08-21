@@ -1,5 +1,11 @@
 library core;
 
+export 'package:core/src/integrations/custom_top_snackbar_manager_impl.dart'
+    show CustomTopSnackBarManagerImpl;
+
+export 'package:core/src/abstractions/custom_top_snackbar_manager.dart'
+    show CustomTopSnackBarManager;
+
 export 'package:core/src/abstractions/web_auth.dart' show WebAuth;
 
 export 'package:core/src/integrations/web_auth_impl.dart' show WebAuthImpl;

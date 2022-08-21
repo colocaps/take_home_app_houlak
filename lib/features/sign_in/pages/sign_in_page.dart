@@ -10,6 +10,8 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var signInCubit = InjectorContainer.instance.resolve<SignInCubit>();
     var webAuth = InjectorContainer.instance.resolve<WebAuth>();
+    var customTopSnackBarManager =
+        InjectorContainer.instance.resolve<CustomTopSnackBarManager>();
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -17,6 +19,7 @@ class SignInPage extends StatelessWidget {
         signInCubit: signInCubit,
         webAuth: webAuth,
         onSignInCorrect: HomeModule.navigateToHome,
+        customTopSnackBarManager: customTopSnackBarManager,
       ),
     );
   }
