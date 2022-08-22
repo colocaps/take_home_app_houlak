@@ -27,6 +27,10 @@
     "are_you_sure_of_sign_out": "Are you sure of signing out ?",
     "@are_you_sure_of_sign_out": {
       "description": "text for the closing modal"
+    },
+    "thank_you": "Thanks for using our App!",
+    "@thank_you": {
+      "description": "text for the closing session snackbar"
     }
 
 }

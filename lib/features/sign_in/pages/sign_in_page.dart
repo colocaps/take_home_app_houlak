@@ -38,6 +38,7 @@ class SignInPage extends StatelessWidget {
           buttonText: AppLocalizations.of(context)!.sign_in_button_text,
           titleText: AppLocalizations.of(context)!.sign_in_title,
           cancelText: AppLocalizations.of(context)!.cancel_by_user,
+          welcomeText: AppLocalizations.of(context)!.welcome_label,
         ),
       ),
     );

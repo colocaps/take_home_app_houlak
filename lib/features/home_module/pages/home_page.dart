@@ -10,6 +10,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var homeSearchCubit = InjectorContainer.instance.resolve<HomeSearchCubit>();
+    var customSnackBar =
+        InjectorContainer.instance.resolve<CustomTopSnackBarManager>();
+
     final GlobalKey<FormState> formKey = GlobalKey();
     final token = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
@@ -18,6 +21,7 @@ class HomePage extends StatelessWidget {
         onWillPop: () async {
           _areYouSure(context, () {
             SignInModule.navigateToSignIn(context);
+            _showCloseSessionSnackbar(customSnackBar, context);
           });
           return false;
         },
@@ -54,6 +58,14 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  void _showCloseSessionSnackbar(
+      CustomTopSnackBarManager customSnackBar, BuildContext context) {
+    customSnackBar.showSuccessTopSnackbar(
+      context: context,
+      message: AppLocalizations.of(context)!.thank_you,
     );
   }
 

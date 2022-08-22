@@ -6,5 +6,6 @@
     "cancel_by_user": "Cancelado por el usuario",
     "are_you_sure_of_closing_app": "¿ Esta seguro que desea cerrar la aplicacion ?",
     "cancel": "Cancelar",
-    "are_you_sure_of_sign_out": "¿ Seguro que quiere cerrar sesion ?"
+    "are_you_sure_of_sign_out": "¿ Seguro que quiere cerrar sesion ?",
+    "thank_you": "Gracias por utilizar nuestra App!"
 }

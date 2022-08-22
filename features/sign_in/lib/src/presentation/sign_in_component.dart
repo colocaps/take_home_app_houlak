@@ -13,6 +13,7 @@ class SignInComponent extends StatelessWidget {
   final String _titleText;
   final String _buttonText;
   final String _cancelText;
+  final String _welcomeText;
 
   const SignInComponent({
     Key? key,
@@ -23,6 +24,7 @@ class SignInComponent extends StatelessWidget {
     required String titleText,
     required String buttonText,
     required String cancelText,
+    required String welcomeText,
   })  : _signInCubit = signInCubit,
         _webAuth = webAuth,
         _onSignInCorrect = onSignInCorrect,
@@ -30,6 +32,7 @@ class SignInComponent extends StatelessWidget {
         _titleText = titleText,
         _buttonText = buttonText,
         _cancelText = cancelText,
+        _welcomeText = welcomeText,
         super(key: key);
 
   @override
@@ -49,6 +52,10 @@ class SignInComponent extends StatelessWidget {
             _onSignInCorrect(
               context,
               state.authorizationEntity.accessToken,
+            );
+            _customTopSnackBarManager.showSuccessTopSnackbar(
+              context: context,
+              message: _welcomeText,
             );
           }
         },
