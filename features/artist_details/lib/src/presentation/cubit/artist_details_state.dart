@@ -12,11 +12,11 @@ class Loading extends ArtistDetailsState {}
 class Empty extends ArtistDetailsState {}
 
 class Loaded extends ArtistDetailsState {
-  final ResponseEntity responseEntity;
+  final ArtistDetailsEntity artistDetailsEntity;
 
-  Loaded(this.responseEntity);
+  Loaded(this.artistDetailsEntity);
   @override
-  List<Object> get props => [responseEntity];
+  List<Object> get props => [artistDetailsEntity];
 }
 
 class Error extends ArtistDetailsState {

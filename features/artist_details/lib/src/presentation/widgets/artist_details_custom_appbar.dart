@@ -30,9 +30,7 @@ class ArtistDetailsCustomAppbar extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: Text(
             artistDetailsEntity.name,
-            style: const TextStyle(
-              fontSize: 16,
-            ),
+            style: Theme.of(context).textTheme.headline2,
             textAlign: TextAlign.center,
           ),
         ),

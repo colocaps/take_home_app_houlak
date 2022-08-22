@@ -2,6 +2,7 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:houlak_take_home_app/features/artist_module/artist_module.dart';
 import 'package:houlak_take_home_app/features/home_module/home_module.dart';
 import 'package:houlak_take_home_app/features/sign_in/sign_in_module.dart';
 
@@ -37,6 +38,7 @@ class _ApplicationState extends State<Application> {
     return {
       ...HomeModule.generateRoutes(),
       ...SignInModule.generateRoutes(),
+      ...ArtistModule.generateRoutes(),
     };
   }
 }

@@ -21,7 +21,7 @@ class ArtistDetailsUsecaseImpl implements ArtistDetailsUsecase {
       );
     } else {
       return ArtistDetailsOutput.withData(
-        responseEntity: resp.responseEntity,
+        artistDetailsEntity: resp.artistDetailsEntity,
       );
     }
   }

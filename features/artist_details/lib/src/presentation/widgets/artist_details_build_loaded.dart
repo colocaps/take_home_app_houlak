@@ -13,21 +13,19 @@ class ArtistDetailsBuildLoaded extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: CustomScrollView(
-        slivers: [
-          ArtistDetailsCustomAppbar(
-            artistDetailsEntity: _artistDetailsEntity,
-          ),
-          SliverList(
-            delegate: SliverChildListDelegate([
-              ArtisDetailsOverview(
-                artistDetailsEntity: _artistDetailsEntity,
-              ),
-            ]),
-          ),
-        ],
-      ),
+    return CustomScrollView(
+      slivers: [
+        ArtistDetailsCustomAppbar(
+          artistDetailsEntity: _artistDetailsEntity,
+        ),
+        SliverList(
+          delegate: SliverChildListDelegate([
+            ArtisDetailsOverview(
+              artistDetailsEntity: _artistDetailsEntity,
+            ),
+          ]),
+        ),
+      ],
     );
   }
 }

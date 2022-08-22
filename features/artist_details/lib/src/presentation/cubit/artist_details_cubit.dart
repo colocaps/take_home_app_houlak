@@ -1,4 +1,4 @@
-import 'package:artist_details/src/domain/entities/response_entity.dart';
+import 'package:artist_details/src/domain/entities/artist_detail_entity.dart';
 import 'package:artist_details/src/domain/interactor/input_output/artist_details_input.dart';
 import 'package:artist_details/src/domain/interactor/usecase/artist_details_usecase.dart';
 import 'package:equatable/equatable.dart';
@@ -26,11 +26,11 @@ class ArtistDetailsCubit extends Cubit<ArtistDetailsState> {
           result.errors!,
         ),
       );
-    } else if (result.responseEntity == null) {
+    } else if (result.artistDetailsEntity == null) {
       emit(Empty());
     } else {
       emit(
-        Loaded(result.responseEntity!),
+        Loaded(result.artistDetailsEntity!),
       );
     }
   }

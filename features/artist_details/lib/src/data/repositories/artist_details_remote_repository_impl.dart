@@ -1,6 +1,5 @@
 import 'package:artist_details/src/domain/entities/artist_detail_entity.dart';
 import 'package:artist_details/src/domain/entities/images_entity.dart';
-import 'package:artist_details/src/domain/entities/response_entity.dart';
 import 'package:artist_details/src/domain/interactor/input_output/artist_details_output.dart';
 import 'package:artist_details/src/domain/interactor/input_output/artist_details_input.dart';
 import 'package:artist_details/src/domain/repositories/artist_details_remote_repository.dart';
@@ -30,9 +29,9 @@ class ArtistDetailsRemoteRepositoryImpl
     );
     if (response != null) {
       if (response.isOk()) {
-        final artistDetail = _mapToResponseEntity(response.data);
+        final artistDetail = _mapToArtistDetailsEntity(response.data);
         return ArtistDetailsOutput.withData(
-          responseEntity: artistDetail,
+          artistDetailsEntity: artistDetail,
         );
       } else {
         _errors.add(
@@ -52,15 +51,9 @@ class ArtistDetailsRemoteRepositoryImpl
     }
   }
 
-  static ResponseEntity _mapToResponseEntity(Map<String, dynamic> value) {
-    return ResponseEntity(
-      artistDetailsEntity: _mapToArtistDetailsEntity(value['artists']),
-    );
-  }
-
   static ArtistDetailsEntity _mapToArtistDetailsEntity(
       Map<String, dynamic> value) {
-    var images = value['items'] as List<dynamic>;
+    var images = value['images'] as List<dynamic>;
     var imagesList = _mapToImages(images);
 
     return ArtistDetailsEntity(

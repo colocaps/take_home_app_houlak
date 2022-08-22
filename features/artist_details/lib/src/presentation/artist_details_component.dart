@@ -72,7 +72,7 @@ class ArtistDetailsComponent extends StatelessWidget {
       );
     } else if (state is Loaded) {
       return ArtistDetailsBuildLoaded(
-        artistDetailsEntity: state.responseEntity.artistDetailsEntity,
+        artistDetailsEntity: state.artistDetailsEntity,
       );
     }
     return Container();

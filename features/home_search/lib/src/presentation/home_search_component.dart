@@ -6,11 +6,14 @@ import 'package:home_search/src/presentation/widgets/build_artist_card.dart';
 
 class HomeSearchComponent extends StatelessWidget {
   final HomeSearchCubit _homeSearchCubit;
+  final void Function(String) _onArtistCardTap;
 
   const HomeSearchComponent({
     Key? key,
     required HomeSearchCubit homeSearchCubit,
+    required void Function(String) onArtistCardTap,
   })  : _homeSearchCubit = homeSearchCubit,
+        _onArtistCardTap = onArtistCardTap,
         super(key: key);
 
   @override
@@ -50,14 +53,20 @@ class HomeSearchComponent extends StatelessWidget {
     } else if (state is Loaded) {
       var itemEntityList = state.responseEntity.artistEntity.itemEntityList;
       return ListView.builder(
+        shrinkWrap: true,
         itemCount: itemEntityList.length,
         itemBuilder: (BuildContext context, int index) {
-          return BuildArtistCard(
-            artistName: itemEntityList[index].name,
-            popularity: itemEntityList[index].popularity.toString(),
-            imageUrl: itemEntityList[index].imagesEntity.isEmpty
-                ? 'https://st.depositphotos.com/1987177/3470/v/450/depositphotos_34700099-stock-illustration-no-photo-available-or-missing.jpg'
-                : itemEntityList[index].imagesEntity[0].url,
+          return GestureDetector(
+            child: BuildArtistCard(
+              artistName: itemEntityList[index].name,
+              popularity: itemEntityList[index].popularity.toString(),
+              imageUrl: itemEntityList[index].imagesEntity.isEmpty
+                  ? 'https://st.depositphotos.com/1987177/3470/v/450/depositphotos_34700099-stock-illustration-no-photo-available-or-missing.jpg'
+                  : itemEntityList[index].imagesEntity[0].url,
+            ),
+            onTap: () {
+              _onArtistCardTap(itemEntityList[index].id);
+            },
           );
         },
       );

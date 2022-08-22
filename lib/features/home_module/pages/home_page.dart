@@ -1,6 +1,7 @@
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:home_search/home_search.dart';
+import 'package:houlak_take_home_app/features/artist_module/artist_module.dart';
 import 'package:houlak_take_home_app/features/sign_in/sign_in_module.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -37,6 +38,15 @@ class HomePage extends StatelessWidget {
             appBarHeight: 80,
             body: HomeSearchComponent(
               homeSearchCubit: homeSearchCubit,
+              onArtistCardTap: (artistId) {
+                List<String> dataToSend = [];
+                dataToSend.add(artistId);
+                dataToSend.add(token);
+                ArtistModule.navigateToArtistDetailsPage(
+                  context,
+                  dataToSend,
+                );
+              },
             ),
             iconSrc: '',
             landingLeft: const Icon(Icons.search),

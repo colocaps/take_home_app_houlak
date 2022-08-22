@@ -16,16 +16,39 @@ class ArtisDetailsOverview extends StatelessWidget {
         vertical: 10,
       ),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Generos : ${artistDetailsEntity.genresList.toString()}',
-            textAlign: TextAlign.justify,
-            style: Theme.of(context).textTheme.subtitle1,
+            'Generos',
+            style: Theme.of(context).textTheme.headline2,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          ListView.builder(
+            shrinkWrap: true,
+            itemCount: artistDetailsEntity.genresList.length,
+            itemBuilder: (BuildContext context, int index) {
+              return Row(
+                children: [
+                  const Icon(Icons.keyboard_double_arrow_right_rounded),
+                  Text(
+                    ' ${artistDetailsEntity.genresList[index]}',
+                    textAlign: TextAlign.justify,
+                    style: Theme.of(context).textTheme.subtitle2,
+                  ),
+                ],
+              );
+            },
+          ),
+          const SizedBox(
+            height: 20,
           ),
           Text(
             'Popularidad : ${artistDetailsEntity.popularity.toString()}',
             textAlign: TextAlign.justify,
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.subtitle2,
           ),
         ],
       ),
