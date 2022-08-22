@@ -1,32 +1,32 @@
+import 'package:artist_details/artist_details.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:home_search/home_search.dart';
-import 'package:houlak_take_home_app/features/home_module/pages/home_page.dart';
+import 'package:houlak_take_home_app/features/artist_module/pages/artist_details_page.dart';
 
-abstract class HomeModule {
+abstract class ArtistModule {
   static late final NavigationManager _navigationManager;
 
   static registerDependencies() async {
     _navigationManager =
         InjectorContainer.instance.resolve<NavigationManager>();
-    await HomeSearhcInitializer.registerDependencies();
+    await ArtistDetailsInitializer.registerDependencies();
   }
 
-  static const String homeRoute = '/home';
+  static const String artistDetailsRoute = '/artist-details';
 
   static Map<String, WidgetBuilder> generateRoutes() {
     return {
-      homeRoute: (context) => const HomePage(),
+      artistDetailsRoute: (context) => const ArtistDetailsPage(),
     };
   }
 
-  static Future<T?> navigateToHome<T, TArgs>(
+  static Future<T?> navigateToArtistDetailsPage<T, TArgs>(
     BuildContext context,
     TArgs args,
   ) {
     return _navigationManager.navigateToWithArgs(
       context,
-      homeRoute,
+      artistDetailsRoute,
       args,
     );
   }

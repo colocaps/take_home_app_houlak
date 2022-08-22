@@ -1,7 +1,10 @@
 library artist_details;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:artist_details/src/artist_details_initializer.dart'
+    show ArtistDetailsInitializer;
+
+export 'package:artist_details/src/presentation/artist_details_component.dart'
+    show ArtistDetailsComponent;
+
+export 'package:artist_details/src/presentation/cubit/artist_details_cubit.dart'
+    show ArtistDetailsCubit;
