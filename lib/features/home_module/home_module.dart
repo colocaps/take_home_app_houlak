@@ -22,11 +22,10 @@ abstract class HomeModule {
     BuildContext context,
     TArgs args,
   ) {
-    return _navigationManager.pushNamedAndRemoveUntil(
+    return _navigationManager.navigateToWithArgs(
       context,
       homeRoute,
-      (homeRoute) => false,
-      args: args,
+      args,
     );
   }
 }

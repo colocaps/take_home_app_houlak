@@ -1,4 +1,5 @@
 import 'package:core/src/abstractions/web_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_web_auth/flutter_web_auth.dart';
 
 class WebAuthImpl implements WebAuth {
@@ -17,11 +18,24 @@ class WebAuthImpl implements WebAuth {
   Future<Uri> authenticate() async {
     String urlDireccion =
         'https://accounts.spotify.com/authorize?response_type=token&client_id=$_clientId&redirect_uri=$_redirectUri';
-    final response = await FlutterWebAuth.authenticate(
-        url: urlDireccion, callbackUrlScheme: _callbackScheme);
 
-    final data = Uri.parse(response);
+    try {
+      final response = await FlutterWebAuth.authenticate(
+        url: urlDireccion,
+        callbackUrlScheme: _callbackScheme,
+        preferEphemeral: true,
+      );
 
-    return Future.value(data);
+      final data = Uri.parse(response);
+      return Future.value(data);
+    } on PlatformException catch (e) {
+      return Future.value(
+        Uri(
+          queryParameters: {
+            'error': e.message,
+          },
+        ),
+      );
+    }
   }
 }

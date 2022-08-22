@@ -5,10 +5,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignInBuildInitial extends StatelessWidget {
   final void Function()? _onPressed;
+  final String _titleText;
+  final String _buttonText;
   const SignInBuildInitial({
     Key? key,
     required void Function()? onPressed,
+    required String titleText,
+    required String buttonText,
   })  : _onPressed = onPressed,
+        _titleText = titleText,
+        _buttonText = buttonText,
         super(key: key);
 
   @override
@@ -32,53 +38,73 @@ class SignInBuildInitial extends StatelessWidget {
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
             child: Container(
-              decoration: BoxDecoration(color: Colors.white.withOpacity(0.0)),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.0),
+              ),
             ),
           ),
         ),
         Container(
-          alignment: Alignment.center,
+          padding: const EdgeInsets.only(
+            top: 150,
+          ),
+          child: Text(
+            _titleText,
+            style: Theme.of(context).textTheme.headline2,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.only(
+            top: 550,
+          ),
+          alignment: Alignment.bottomCenter,
           color: Colors.grey.withOpacity(0.1),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                "Spotify Searcher",
-                style: Theme.of(context).textTheme.headline2,
-                textAlign: TextAlign.center,
-              ),
               SizedBox(
-                width: 180,
+                width: 240,
+                height: 60,
                 child: ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
-                      Theme.of(context).colorScheme.secondary,
+                      const Color(0xff1DB954),
                     ),
                     shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
-                          side: BorderSide(
-                            width: 0.0,
-                            color: Theme.of(context).colorScheme.secondary,
-                            style: BorderStyle.solid,
-                          ),
-                          borderRadius: BorderRadius.circular(20)),
+                        side: BorderSide(
+                          width: 0.0,
+                          color: Theme.of(context).colorScheme.secondary,
+                          style: BorderStyle.solid,
+                        ),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
                     ),
                   ),
                   onPressed: _onPressed,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
                       Text(
-                        "Sign In with Spotify",
-                        style: TextStyle(
-                          fontSize: 11.0,
+                        _buttonText,
+                        style: const TextStyle(
+                          fontSize: 13.0,
                           fontFamily: "Raleway",
                         ),
                       ),
-                      Icon(FontAwesomeIcons.spotify),
+                      const Icon(FontAwesomeIcons.spotify),
                     ],
                   ),
                 ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Text(
+                "by Esteban Farias",
+                style: Theme.of(context).textTheme.subtitle2,
+                textAlign: TextAlign.center,
               ),
             ],
           ),

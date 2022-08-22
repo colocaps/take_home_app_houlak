@@ -1,5 +1,7 @@
 library core;
 
+export 'package:core/src/utils/alert_dialog_utils.dart' show AlertDialogUtils;
+
 export 'package:core/src/integrations/custom_top_snackbar_manager_impl.dart'
     show CustomTopSnackBarManagerImpl;
 

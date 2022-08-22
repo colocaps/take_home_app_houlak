@@ -1,4 +1,10 @@
 {
     "@@locale": "es",
-    "welcome_label": "Bienvenido"
+    "welcome_label": "Bienvenido",
+    "sign_in_title": "Buscador de artistas de Spotify",
+    "sign_in_button_text": "Inicia sesion con Spotify",
+    "cancel_by_user": "Cancelado por el usuario",
+    "are_you_sure_of_closing_app": "¿ Esta seguro que desea cerrar la aplicacion ?",
+    "cancel": "Cancelar",
+    "are_you_sure_of_sign_out": "¿ Seguro que quiere cerrar sesion ?"
 }

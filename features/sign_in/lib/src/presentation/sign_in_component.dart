@@ -10,6 +10,9 @@ class SignInComponent extends StatelessWidget {
   final WebAuth _webAuth;
   final CustomTopSnackBarManager _customTopSnackBarManager;
   final Function(BuildContext, String) _onSignInCorrect;
+  final String _titleText;
+  final String _buttonText;
+  final String _cancelText;
 
   const SignInComponent({
     Key? key,
@@ -17,10 +20,16 @@ class SignInComponent extends StatelessWidget {
     required WebAuth webAuth,
     required CustomTopSnackBarManager customTopSnackBarManager,
     required Function(BuildContext, String) onSignInCorrect,
+    required String titleText,
+    required String buttonText,
+    required String cancelText,
   })  : _signInCubit = signInCubit,
         _webAuth = webAuth,
         _onSignInCorrect = onSignInCorrect,
         _customTopSnackBarManager = customTopSnackBarManager,
+        _titleText = titleText,
+        _buttonText = buttonText,
+        _cancelText = cancelText,
         super(key: key);
 
   @override
@@ -32,7 +41,7 @@ class SignInComponent extends StatelessWidget {
           if (state is Error) {
             _customTopSnackBarManager.showErrorTopSnackbar(
               context: context,
-              message: 'Cancelado por el usuario',
+              message: _cancelText,
             );
 
             await _signInCubit.initState();
@@ -59,6 +68,8 @@ class SignInComponent extends StatelessWidget {
             authResponse: await _webAuth.authenticate(),
           ),
         ),
+        buttonText: _buttonText,
+        titleText: _titleText,
       );
     }
     return Container();
