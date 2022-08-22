@@ -88,6 +88,7 @@ class CustomAlertDialog extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Card(
+            color: Theme.of(context).highlightColor,
             elevation: 10,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(40.0),
@@ -163,7 +164,6 @@ class CustomAlertDialog extends StatelessWidget {
                         width: widthButton,
                         height: heightButton,
                         child: ElevatedButton(
-                          style: ApplicationTheme.altButtonStyle,
                           onPressed: okAction,
                           child: SizedBox(
                             height: heightButton,
