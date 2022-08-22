@@ -8,4 +8,13 @@ abstract class EnvironmentConfig {
     'CLIENT_ID',
     defaultValue: '...',
   );
+
+  static const redirectUri = String.fromEnvironment(
+    'REDIRECT_URI',
+    defaultValue: '...',
+  );
+  static const callbackScheme = String.fromEnvironment(
+    'CALLBACK_SCHEME',
+    defaultValue: '...',
+  );
 }

@@ -9,6 +9,18 @@ abstract class IoCManager {
       () => NavigationManagerImpl(),
     );
 
+    injector.registerLazySingleton<WebAuth>(
+      () => WebAuthImpl(
+        clientId: injector.resolveByName('clientID'),
+        redirectUri: injector.resolveByName('redirectUri'),
+        callbackScheme: injector.resolveByName('callbackScheme'),
+      ),
+    );
+
+    injector.registerLazySingleton<CustomTopSnackBarManager>(
+      () => CustomTopSnackBarManagerImpl(),
+    );
+
     injector.registerFactoryByName(
       () => EnvironmentConfig.baseUrl,
       'baseUrl',
@@ -16,6 +28,16 @@ abstract class IoCManager {
     injector.registerFactoryByName(
       () => EnvironmentConfig.clientID,
       'clientID',
+    );
+
+    injector.registerFactoryByName(
+      () => EnvironmentConfig.redirectUri,
+      'redirectUri',
+    );
+
+    injector.registerFactoryByName(
+      () => EnvironmentConfig.callbackScheme,
+      'callbackScheme',
     );
   }
 }

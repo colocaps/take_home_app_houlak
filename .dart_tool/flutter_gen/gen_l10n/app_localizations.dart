@@ -99,6 +99,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Welcome'**
   String get welcome_label;
+
+  /// text for the title label on sign in component
+  ///
+  /// In en, this message translates to:
+  /// **'Spotify artist searcher'**
+  String get sign_in_title;
+
+  /// text for the button text of sign in
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Spotify'**
+  String get sign_in_button_text;
+
+  /// text for the snackbar of sign in cancelation
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel by user'**
+  String get cancel_by_user;
+
+  /// text for the closing modal
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure of closing the app ?'**
+  String get are_you_sure_of_closing_app;
+
+  /// text for cancel text
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// text for the closing modal
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure of signing out ?'**
+  String get are_you_sure_of_sign_out;
+
+  /// text for the closing session snackbar
+  ///
+  /// In en, this message translates to:
+  /// **'Thanks for using our App!'**
+  String get thank_you;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

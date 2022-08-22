@@ -18,7 +18,14 @@ abstract class HomeModule {
     };
   }
 
-  static Future<T?> navigateToHome<T>(BuildContext context) {
-    return _navigationManager.navigateTo(context, homeRoute);
+  static Future<T?> navigateToHome<T, TArgs>(
+    BuildContext context,
+    TArgs args,
+  ) {
+    return _navigationManager.navigateToWithArgs(
+      context,
+      homeRoute,
+      args,
+    );
   }
 }

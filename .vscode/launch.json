@@ -10,6 +10,8 @@
             "args": [
                 "--dart-define=BASE_URL=https://api.spotify.com/v1",
                 "--dart-define=CLIENT_ID=b12eb2b22cd34c418a0788d6dae134c7",
+                "--dart-define=REDIRECT_URI=takehome:/",
+                "--dart-define=CALLBACK_SCHEME=takehome",
                
                 ],
             },

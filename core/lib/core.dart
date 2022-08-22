@@ -1,5 +1,17 @@
 library core;
 
+export 'package:core/src/utils/alert_dialog_utils.dart' show AlertDialogUtils;
+
+export 'package:core/src/integrations/custom_top_snackbar_manager_impl.dart'
+    show CustomTopSnackBarManagerImpl;
+
+export 'package:core/src/abstractions/custom_top_snackbar_manager.dart'
+    show CustomTopSnackBarManager;
+
+export 'package:core/src/abstractions/web_auth.dart' show WebAuth;
+
+export 'package:core/src/integrations/web_auth_impl.dart' show WebAuthImpl;
+
 export 'package:core/widgets/custom_empty_state.dart' show CustomEmptyState;
 
 export 'package:core/widgets/page_container_with_icon.dart'

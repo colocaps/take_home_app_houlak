@@ -3,6 +3,34 @@
     "welcome_label": "Welcome",
     "@welcome_label": {
       "description": "text for the welcome label"
+    },
+    "sign_in_title": "Spotify artist searcher",
+    "@sign_in_title": {
+      "description": "text for the title label on sign in component"
+    },
+    "sign_in_button_text": "Sign in with Spotify",
+    "@sign_in_button_text": {
+      "description": "text for the button text of sign in"
+    },
+    "cancel_by_user": "Cancel by user",
+    "@cancel_by_user": {
+      "description": "text for the snackbar of sign in cancelation"
+    },
+    "are_you_sure_of_closing_app": "Are you sure of closing the app ?",
+    "@are_you_sure_of_closing_app": {
+      "description": "text for the closing modal"
+    },
+    "cancel": "Cancel",
+    "@cancel": {
+      "description": "text for cancel text"
+    },
+    "are_you_sure_of_sign_out": "Are you sure of signing out ?",
+    "@are_you_sure_of_sign_out": {
+      "description": "text for the closing modal"
+    },
+    "thank_you": "Thanks for using our App!",
+    "@thank_you": {
+      "description": "text for the closing session snackbar"
     }
 
 }
