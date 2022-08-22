@@ -2,7 +2,7 @@ import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:home_search/home_search.dart';
 import 'package:houlak_take_home_app/features/artist_module/artist_module.dart';
-import 'package:houlak_take_home_app/features/sign_in/sign_in_module.dart';
+import 'package:houlak_take_home_app/features/auth_module/sign_in/sign_in_module.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatelessWidget {

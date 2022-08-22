@@ -4,7 +4,7 @@ packages:
   artist_details:
     dependency: "direct main"
     description:
-      path: "features/artist_details"
+      path: "features/artist_module/artist_details"
       relative: true
     source: path
     version: "0.0.1"
@@ -185,7 +185,7 @@ packages:
   home_search:
     dependency: "direct main"
     description:
-      path: "features/home_search"
+      path: "features/home_module/home_search"
       relative: true
     source: path
     version: "0.0.1"
@@ -339,7 +339,7 @@ packages:
   sign_in:
     dependency: "direct main"
     description:
-      path: "features/sign_in"
+      path: "features/auth_module/sign_in"
       relative: true
     source: path
     version: "0.0.1"
