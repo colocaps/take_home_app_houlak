@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
           key: formKey,
           child: PageContainerWithIcon(
             bgColor: Theme.of(context).backgroundColor,
-            appBarColor: Colors.blueAccent,
+            appBarColor: Colors.grey[900],
             withoutContentPadding: true,
             showIconContainer: false,
             centerTitle: true,

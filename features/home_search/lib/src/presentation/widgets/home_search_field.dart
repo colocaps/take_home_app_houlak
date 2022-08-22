@@ -17,20 +17,30 @@ class HomeSearchField extends StatelessWidget {
       style: Theme.of(context).textTheme.bodyLarge,
       textAlign: TextAlign.center,
       decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+          borderSide: const BorderSide(
+            color: Color(0xff1DB954),
+            width: 2.0,
+          ),
+        ),
         isDense: true,
         errorMaxLines: 1,
         errorStyle: const TextStyle(
           color: Colors.transparent,
           fontSize: 0,
         ),
-        contentPadding: const EdgeInsets.symmetric(vertical: 20),
+        contentPadding: const EdgeInsets.symmetric(vertical: 15),
         filled: true,
         hintText: 'Busca artistas',
-        hintStyle: TextStyle(
-          color: Colors.grey[800],
+        hintStyle: const TextStyle(
+          color: Colors.white,
           fontSize: 15,
         ),
-        fillColor: Colors.white70,
+        fillColor: Colors.grey[800],
       ),
       onFieldSubmitted: _onFieldSubmitted,
     );
