@@ -8,6 +8,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  artist_top_tracks:
+    dependency: "direct main"
+    description:
+      path: "features/artist_module/artist_top_tracks"
+      relative: true
+    source: path
+    version: "0.0.1"
   async:
     dependency: transitive
     description:

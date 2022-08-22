@@ -5,10 +5,13 @@ import 'package:flutter/material.dart';
 
 class ArtistDetailsBuildLoaded extends StatelessWidget {
   final ArtistDetailsEntity _artistDetailsEntity;
+  final Widget _artistTopTracksComponent;
   const ArtistDetailsBuildLoaded({
     Key? key,
     required ArtistDetailsEntity artistDetailsEntity,
+    required Widget artistTopTracksComponent,
   })  : _artistDetailsEntity = artistDetailsEntity,
+        _artistTopTracksComponent = artistTopTracksComponent,
         super(key: key);
 
   @override
@@ -23,6 +26,7 @@ class ArtistDetailsBuildLoaded extends StatelessWidget {
             ArtisDetailsOverview(
               artistDetailsEntity: _artistDetailsEntity,
             ),
+            _artistTopTracksComponent,
           ]),
         ),
       ],

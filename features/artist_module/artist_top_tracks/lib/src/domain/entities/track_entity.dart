@@ -6,7 +6,7 @@ class TrackEntity {
   final List<ArtistEntity> artistList;
   final String trackId;
   final String tackName;
-  final String trackPopularity;
+  final int trackPopularity;
   final String previewUrl;
   TrackEntity({
     required this.album,

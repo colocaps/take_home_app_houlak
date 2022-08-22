@@ -12,11 +12,11 @@ class Loading extends ArtistTopTracksState {}
 class Empty extends ArtistTopTracksState {}
 
 class Loaded extends ArtistTopTracksState {
-  final TrackEntity trackEntity;
+  final ResponseEntity responseEntity;
 
-  Loaded(this.trackEntity);
+  Loaded(this.responseEntity);
   @override
-  List<Object> get props => [trackEntity];
+  List<Object> get props => [responseEntity];
 }
 
 class Error extends ArtistTopTracksState {

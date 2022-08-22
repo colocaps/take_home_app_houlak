@@ -9,15 +9,17 @@ class ArtistDetailsComponent extends StatelessWidget {
   final ArtistDetailsCubit _artistDetailsCubit;
   final String _artistId;
   final String _token;
-
+  final Widget _artistTopTracksComponent;
   const ArtistDetailsComponent({
     Key? key,
     required ArtistDetailsCubit artistDetailsCubit,
     required String artistId,
     required String token,
+    required Widget artistTopTracksComponent,
   })  : _artistDetailsCubit = artistDetailsCubit,
         _artistId = artistId,
         _token = token,
+        _artistTopTracksComponent = artistTopTracksComponent,
         super(key: key);
 
   @override
@@ -73,6 +75,7 @@ class ArtistDetailsComponent extends StatelessWidget {
     } else if (state is Loaded) {
       return ArtistDetailsBuildLoaded(
         artistDetailsEntity: state.artistDetailsEntity,
+        artistTopTracksComponent: _artistTopTracksComponent,
       );
     }
     return Container();

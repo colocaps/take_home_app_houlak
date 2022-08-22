@@ -1,16 +1,16 @@
-import 'package:artist_top_tracks/src/domain/entities/track_entity.dart';
+import 'package:artist_top_tracks/src/domain/entities/response_entity.dart';
 
 class ArtistTopTracksOutput {
-  final TrackEntity? trackEntity;
+  final ResponseEntity? responseEntity;
   late List<String>? errors = [];
 
   ArtistTopTracksOutput.withData({
-    required this.trackEntity,
+    required this.responseEntity,
   });
 
   ArtistTopTracksOutput.withErrors({
     required this.errors,
-    this.trackEntity,
+    this.responseEntity,
   });
 
   bool get hasErrors => errors?.isNotEmpty ?? false;
