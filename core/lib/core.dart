@@ -1,5 +1,10 @@
 library core;
 
+export 'package:core/src/integrations/audio_manager_impl.dart'
+    show AudioManagerImpl;
+
+export 'package:core/src/abstractions/audio_manager.dart' show AudioManager;
+
 export 'package:core/src/utils/alert_dialog_utils.dart' show AlertDialogUtils;
 
 export 'package:core/src/integrations/custom_top_snackbar_manager_impl.dart'

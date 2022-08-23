@@ -36,15 +36,18 @@ dependencies:
   auto_size_text: ^3.0.0
   flutter_web_auth: ^0.4.1
   top_snackbar_flutter: ^1.0.2
+
   # packages
   core:
     path: ./core
   home_search:
-    path: ./features/home_search
+    path: ./features/home_module/home_search
   sign_in:
-    path: ./features/sign_in
+    path: ./features/auth_module/sign_in
   artist_details:
-    path: ./features/artist_details
+    path: ./features/artist_module/artist_details
+  artist_top_tracks:
+    path: ./features/artist_module/artist_top_tracks
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

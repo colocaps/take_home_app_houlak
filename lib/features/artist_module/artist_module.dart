@@ -1,4 +1,5 @@
 import 'package:artist_details/artist_details.dart';
+import 'package:artist_top_tracks/artist_top_tracks.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:houlak_take_home_app/features/artist_module/pages/artist_details_page.dart';
@@ -10,6 +11,7 @@ abstract class ArtistModule {
     _navigationManager =
         InjectorContainer.instance.resolve<NavigationManager>();
     await ArtistDetailsInitializer.registerDependencies();
+    await ArtistTopTracksInitializer.registerDependencies();
   }
 
   static const String artistDetailsRoute = '/artist-details';
