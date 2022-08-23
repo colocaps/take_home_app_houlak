@@ -45,14 +45,18 @@ Para mas info visita mi web que esta completamente realizada en Flutter. (Todavi
 
 - [Esteban Farias Flutter Dev.](https://colocaps.github.io/)
 
-## Getting Started
+## Detalles
 
 Detalles faltantes a tener en cuenta
 
-- Se podria mejorar la implementacion del inicio de sesion ya que solo se utilizo el Implicit Grant Flow que no es lo mas seguro para una app.
+- Se podria mejorar la implementacion del inicio de sesion ya que solo se utilizo el Implicit Grant Flow que no es lo mas seguro para una app. Para esto seria bueno tambien implementar el paquete de shared_preferences para guardar el token. Teniendo esto en cuenta se puede implementar un decoder para el token y saber cuando caduca.
+
+- Se podria tambien implementar el cierre de sesion del usuario.
 
 - Se podria mejorar la utilizacion de el audio player, ya que ahora solo puede dar Play y Stop solamente. (Lo que haria seria hacer un package con el audio player aparte y manejar todo desde ahi con estados).
 
 - Se dejo preparada la app en caso de querer agrear ademas de busqueda por artista, tambien de otros types como Album, Playlist, Track, etc.
 
 - Se deja preparada la app para agregar textos a la internazionalizacion.
+
+- Tambien se podria implementar un plugin para ejecutar todos los test de una sola vez.
