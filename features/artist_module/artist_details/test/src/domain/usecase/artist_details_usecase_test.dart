@@ -10,7 +10,7 @@ class MockArtistDetailsRemoteRepository extends Mock
     implements ArtistDetailsRemoteRepository {}
 
 void main() {
-  MockArtistDetailsRemoteRepository _repository;
+  MockArtistDetailsRemoteRepository repository;
 
   var input = ArtistDetailsInput(
     artistId: '454',
@@ -32,10 +32,10 @@ void main() {
   );
 
   test('should throw an error when repository does no respond ok', () async {
-    _repository = MockArtistDetailsRemoteRepository();
+    repository = MockArtistDetailsRemoteRepository();
 
     when(
-      () => _repository.getArtistDetails(
+      () => repository.getArtistDetails(
         input,
       ),
     ).thenAnswer(
@@ -45,13 +45,13 @@ void main() {
     );
 
     var usecase = ArtistDetailsUsecaseImpl(
-      artistDetailsRemoteRepository: _repository,
+      artistDetailsRemoteRepository: repository,
     );
 
     final response = await usecase.execute(input);
 
     verify(
-      () => _repository.getArtistDetails(
+      () => repository.getArtistDetails(
         input,
       ),
     ).called(1);
@@ -63,10 +63,10 @@ void main() {
   });
 
   test('should return data when repository responds ok', () async {
-    _repository = MockArtistDetailsRemoteRepository();
+    repository = MockArtistDetailsRemoteRepository();
 
     when(
-      () => _repository.getArtistDetails(
+      () => repository.getArtistDetails(
         input,
       ),
     ).thenAnswer(
@@ -76,12 +76,12 @@ void main() {
     );
 
     var usecase = ArtistDetailsUsecaseImpl(
-      artistDetailsRemoteRepository: _repository,
+      artistDetailsRemoteRepository: repository,
     );
 
     final response = await usecase.execute(input);
 
-    verify(() => _repository.getArtistDetails(input)).called(1);
+    verify(() => repository.getArtistDetails(input)).called(1);
 
     expect(
       response.artistDetailsEntity,

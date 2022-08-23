@@ -36,6 +36,7 @@ Paquetes utilizados de terceros:
 - Mocktail (para test)
 - Audio player
 - Get it
+- Bloc Test
 
 Todos estos paquetes han sido aprobados con un 90% o mas en pub.dev y tienen sus respectivas abstracciones creadas en caso de que alguno deje de tener actualizaciones o sea dado de baja para poder reemplazarlo sin provocar un blocker haciendo esta tarea mas sencilla.
 
