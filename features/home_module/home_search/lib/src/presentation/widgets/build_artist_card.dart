@@ -16,7 +16,6 @@ class BuildArtistCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Container(
       color: Theme.of(context).backgroundColor,
       padding: const EdgeInsets.all(
@@ -26,9 +25,13 @@ class BuildArtistCard extends StatelessWidget {
         clipBehavior: Clip.hardEdge,
         shadowColor: Theme.of(context).highlightColor,
         color: Theme.of(context).backgroundColor,
-        elevation: 10,
+        elevation: 1,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),
+          side: const BorderSide(
+            color: Color(0xff1DB954),
+            width: 2.0,
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -38,16 +41,17 @@ class BuildArtistCard extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                width: 150,
-                height: 150,
-                margin: const EdgeInsets.only(
-                  top: 10.0,
+                padding: const EdgeInsets.all(2), // Border width
+                decoration: BoxDecoration(
+                  color: const Color(0xff1DB954),
+                  borderRadius: BorderRadius.circular(20),
                 ),
-                child: Image.network(
-                  _imageUrl,
-                  fit: BoxFit.contain,
-                  width: size.width,
-                  height: size.width / 2.618,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: SizedBox.fromSize(
+                    size: const Size.fromRadius(48), // Image radius
+                    child: Image.network(_imageUrl, fit: BoxFit.cover),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -59,7 +63,7 @@ class BuildArtistCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      'Nombre: $_artistName',
+                      ' $_artistName',
                       style: Theme.of(context).textTheme.headline2,
                       textAlign: TextAlign.center,
                     ),

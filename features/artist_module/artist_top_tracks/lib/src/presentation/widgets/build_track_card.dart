@@ -29,7 +29,7 @@ class _BuildTrackCardState extends State<BuildTrackCard> {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10),
       width: 110,
-      height: 320,
+      height: 380,
       child: Scaffold(
         body: Container(
           color: Colors.black,
@@ -56,10 +56,10 @@ class _BuildTrackCardState extends State<BuildTrackCard> {
               ),
               Text(
                 widget.trackEntity.tackName,
-                maxLines: 2,
+                maxLines: 4,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.subtitle2,
+                style: Theme.of(context).textTheme.bodySmall,
               ),
               Column(
                 children: [
