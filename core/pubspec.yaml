@@ -17,6 +17,7 @@ dependencies:
   auto_size_text: ^3.0.0
   flutter_web_auth: ^0.4.1
   top_snackbar_flutter: ^1.0.3
+  just_audio: ^0.9.28
 dev_dependencies:
   flutter_test:
     sdk: flutter

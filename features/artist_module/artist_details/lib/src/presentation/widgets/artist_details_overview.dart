@@ -19,9 +19,14 @@ class ArtisDetailsOverview extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Generos',
-            style: Theme.of(context).textTheme.headline2,
+          Container(
+            padding: const EdgeInsets.only(
+              top: 15,
+            ),
+            child: Text(
+              'Generos',
+              style: Theme.of(context).textTheme.headline2,
+            ),
           ),
           const SizedBox(
             height: 20,
