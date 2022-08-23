@@ -1,7 +1,6 @@
 import 'package:artist_top_tracks/src/domain/interactor/input_output/artist_top_trancks_input.dart';
 import 'package:artist_top_tracks/src/presentation/cubit/artist_top_tracks_cubit.dart';
 import 'package:artist_top_tracks/src/presentation/widgets/artist_top_tracks_build_loaded.dart';
-import 'package:artist_top_tracks/src/presentation/widgets/build_track_card.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
