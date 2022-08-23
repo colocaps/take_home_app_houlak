@@ -20,6 +20,9 @@ abstract class IoCManager {
     injector.registerLazySingleton<CustomTopSnackBarManager>(
       () => CustomTopSnackBarManagerImpl(),
     );
+    injector.registerLazySingleton<AudioManager>(
+      () => AudioManagerImpl(),
+    );
 
     injector.registerFactoryByName(
       () => EnvironmentConfig.baseUrl,

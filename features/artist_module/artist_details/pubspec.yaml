@@ -14,7 +14,7 @@ dependencies:
 
   equatable: 2.0.3
   flutter_bloc: 8.0.1
-  just_audio: ^0.9.28
+
   core:
     path: ../../../core
 

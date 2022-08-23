@@ -11,7 +11,7 @@ class ArtistDetailsPage extends StatelessWidget {
     final args = ModalRoute.of(context)!.settings.arguments as List<String>;
     var artistDetailsCubit =
         InjectorContainer.instance.resolve<ArtistDetailsCubit>();
-
+    var audioManager = InjectorContainer.instance.resolve<AudioManager>();
     var artistTopTracksCubit =
         InjectorContainer.instance.resolve<ArtistTopTracksCubit>();
     return Scaffold(
@@ -27,6 +27,7 @@ class ArtistDetailsPage extends StatelessWidget {
               artistId: args[0],
               market: 'ES',
               token: args[1],
+              audioManager: audioManager,
             ),
           ),
         ),
