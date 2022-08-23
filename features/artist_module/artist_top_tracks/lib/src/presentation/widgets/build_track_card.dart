@@ -2,7 +2,7 @@ import 'package:artist_top_tracks/src/domain/entities/track_entity.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
-class BuildTrackCard extends StatelessWidget {
+class BuildTrackCard extends StatefulWidget {
   final TrackEntity trackEntity;
   final AudioManager _audioManager;
   const BuildTrackCard({
@@ -11,6 +11,18 @@ class BuildTrackCard extends StatelessWidget {
     required AudioManager audioManager,
   })  : _audioManager = audioManager,
         super(key: key);
+
+  @override
+  State<BuildTrackCard> createState() => _BuildTrackCardState();
+}
+
+class _BuildTrackCardState extends State<BuildTrackCard> {
+  late bool _isPlaying;
+  @override
+  void initState() {
+    _isPlaying = false;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +43,7 @@ class BuildTrackCard extends StatelessWidget {
                     package: 'core',
                   ),
                   image: NetworkImage(
-                    trackEntity.album.imagesList[0].url,
+                    widget.trackEntity.album.imagesList[0].url,
                   ),
                   height: 160,
                   width: 100,
@@ -43,7 +55,7 @@ class BuildTrackCard extends StatelessWidget {
                 height: 10,
               ),
               Text(
-                trackEntity.tackName,
+                widget.trackEntity.tackName,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
@@ -51,18 +63,20 @@ class BuildTrackCard extends StatelessWidget {
               ),
               Column(
                 children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      _audioManager.setUrl(trackEntity.previewUrl);
-                      _audioManager.play();
+                  IconButton(
+                    onPressed: () async {
+                      loadTrack();
+                      _isPlaying
+                          ? widget._audioManager.stop()
+                          : widget._audioManager.play();
+
+                      setState(() {
+                        _isPlaying = !_isPlaying;
+                      });
                     },
-                    child: Icon(Icons.play_arrow),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      _audioManager.pause();
-                    },
-                    child: Icon(Icons.pause),
+                    icon: _isPlaying
+                        ? const Icon(Icons.stop)
+                        : const Icon(Icons.play_arrow),
                   ),
                 ],
               ),
@@ -71,5 +85,9 @@ class BuildTrackCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void loadTrack() {
+    widget._audioManager.setUrl(widget.trackEntity.previewUrl);
   }
 }
