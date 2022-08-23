@@ -20,6 +20,7 @@ Alguna cosas a saber de este proyecto:
 - Se creo un Theme Manager para la correcta utilizacion de colores, fuentes, tamaños, asi cuando el usuario decida cambiar el tema de su telefono, cambie automaticamente de light a dark cuando sea necesario.
 - Se utiliza la internacionalizacion de flutter l10n y i18n , que tambien cuando el usuario cambie el idioma de su telefono se cambie automaticamente el la aplicacion.(Solo españo e ingles por ahora).
 - La app esta separada por packages para evitar el acoplamiento. La idea es que solo lo que sea necesario utilizar globalmente sea conocido por todos los paquetes en este caso el package Core. Lo demas solo sera conocido por el root de la app.
+- Se utilizo Github como herramienta para el control de versiones, donde se creo una rama para cada package donde se realizaban commits cortos y claros en la mayoria de los casos y se hicieron los respectivos PR a master/main tras finalizado el desarrollo de cada tarea.
 
 Documentacion de la API de Spotify
 
