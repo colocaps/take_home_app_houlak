@@ -26,6 +26,9 @@ class ArtistDetailsBuildLoaded extends StatelessWidget {
             ArtisDetailsOverview(
               artistDetailsEntity: _artistDetailsEntity,
             ),
+            const SizedBox(
+              height: 30,
+            ),
             _artistTopTracksComponent,
           ]),
         ),
